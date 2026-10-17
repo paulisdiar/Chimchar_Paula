@@ -2,12 +2,27 @@ package com.chimchar.skycampus;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class SkyCampus {
 
     private static final List<Drone> drones = new ArrayList<>();
     private static final List<Mision> misiones = new ArrayList<>();
+
+    private static final Map<String, Double> CAPACIDADES = Map.of(
+            "D1", 0.5,
+            "D2", 0.5,
+            "D3", 0.5,
+            "D4", 0.5,
+            "D5", 0.5
+    );
+
+    private static final Map<TipoCarga, Double> PESOS = Map.of(
+            TipoCarga.SOBRE, 0.05,
+            TipoCarga.CARPETA, 0.2,
+            TipoCarga.LIBRO, 0.5
+    );
 
     public static void main(String[] args) {
         inicializarDrones();
@@ -200,7 +215,19 @@ public class SkyCampus {
             return;
         }
 
-        // Reemplazar el drone por una nueva instancia no disponible.
+        Mision candidata = new Mision(
+                mision.id(),
+                seleccionado,
+                mision.origen(),
+                mision.destino(),
+                mision.tipoCarga(),
+                mision.estado()
+        );
+
+        if (!crearValidacion().validar(candidata)) {
+            return;
+        }
+
         Drone droneAsignado = new Drone(
                 seleccionado.id(),
                 seleccionado.modelo(),
@@ -211,7 +238,6 @@ public class SkyCampus {
 
         actualizarDrone(droneAsignado);
 
-        // Actualizar la misión conservando sus demás campos.
         Mision misionAsignada = new Mision(
                 mision.id(),
                 droneAsignado,
@@ -229,6 +255,19 @@ public class SkyCampus {
         );
 
         ejecutarMision(scanner, misionAsignada);
+    }
+
+    private static Validador crearValidacion() {
+        Validador bateria = new ValidadorBateria();
+
+        bateria.establecerSiguiente(
+                        new ValidadorDestino(ValidadorMision.DESTINOS)
+                )
+                .establecerSiguiente(
+                        new ValidadorCarga(CAPACIDADES, PESOS)
+                );
+
+        return bateria;
     }
 
     private static void ejecutarMision(

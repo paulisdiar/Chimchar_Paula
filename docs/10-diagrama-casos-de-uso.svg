@@ -1,0 +1,48 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1220' height='720' viewBox='0 0 1220 720' font-family='Segoe UI, Arial, sans-serif'>
+<defs><marker id='b' markerWidth='10' markerHeight='8' refX='9' refY='4' orient='auto'><path d='M1,0 L9,4 L1,8' fill='none' stroke='#7c3aed' stroke-width='1.5'/></marker></defs>
+<rect width='1220' height='720' fill='#ffffff'/>
+<text x='30' y='34' font-size='20' font-weight='700' fill='#0f172a'>SkyCampus MVP - Casos de uso (SC-01 Registrar misión de reparto)</text>
+<rect x='300' y='55' width='890' height='640' rx='8' fill='#f8fafc' stroke='#1e3a8a' stroke-width='2'/>
+<text x='320' y='80' font-size='14' font-weight='700' fill='#1e3a8a'>SkyCampus</text>
+<line x1='102' y1='170' x2='342' y2='225' stroke='#64748b' stroke-width='1.4'/>
+<line x1='102' y1='365' x2='342' y2='125' stroke='#64748b' stroke-width='1.4'/>
+<line x1='102' y1='365' x2='342' y2='225' stroke='#64748b' stroke-width='1.4'/>
+<line x1='102' y1='365' x2='342' y2='325' stroke='#64748b' stroke-width='1.4'/>
+<line x1='102' y1='365' x2='342' y2='425' stroke='#64748b' stroke-width='1.4'/>
+<line x1='102' y1='365' x2='342' y2='525' stroke='#64748b' stroke-width='1.4'/>
+<line x1='102' y1='365' x2='342' y2='640' stroke='#64748b' stroke-width='1.4'/>
+<line x1='102' y1='585' x2='802' y2='583' stroke='#64748b' stroke-width='1.4'/>
+<ellipse cx='470' cy='125' rx='128' ry='34' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='470' y='130' text-anchor='middle' font-size='13' fill='#0f172a'>Ver flota</text>
+<ellipse cx='470' cy='225' rx='128' ry='34' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='470' y='222' text-anchor='middle' font-size='13' fill='#0f172a'>Registrar misión</text>
+<text x='470' y='239' text-anchor='middle' font-size='13' fill='#0f172a'>de reparto</text>
+<ellipse cx='470' cy='325' rx='128' ry='34' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='470' y='330' text-anchor='middle' font-size='13' fill='#0f172a'>Asignar drone a misión</text>
+<ellipse cx='470' cy='425' rx='128' ry='34' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='470' y='430' text-anchor='middle' font-size='13' fill='#0f172a'>Confirmar entrega</text>
+<ellipse cx='470' cy='525' rx='128' ry='34' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='470' y='522' text-anchor='middle' font-size='13' fill='#0f172a'>Cancelar</text>
+<text x='470' y='539' text-anchor='middle' font-size='13' fill='#0f172a'>misión pendiente</text>
+<ellipse cx='470' cy='640' rx='128' ry='34' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='470' y='645' text-anchor='middle' font-size='13' fill='#0f172a'>Consultar misiones</text>
+<ellipse cx='930' cy='150' rx='128' ry='34' fill='#ede9fe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='930' y='147' text-anchor='middle' font-size='13' fill='#0f172a'>Enviar alerta</text>
+<text x='930' y='164' text-anchor='middle' font-size='13' fill='#0f172a'>de batería baja</text>
+<ellipse cx='930' cy='290' rx='128' ry='34' fill='#ede9fe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='930' y='287' text-anchor='middle' font-size='13' fill='#0f172a'>Validar disponibilidad</text>
+<text x='930' y='304' text-anchor='middle' font-size='13' fill='#0f172a'>del drone</text>
+<ellipse cx='930' cy='583' rx='128' ry='34' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='930' y='580' text-anchor='middle' font-size='13' fill='#0f172a'>Configurar destinos</text>
+<text x='930' y='597' text-anchor='middle' font-size='13' fill='#0f172a'>y flota</text>
+<line x1='598' y1='237' x2='805' y2='276' stroke='#7c3aed' stroke-width='1.6' stroke-dasharray='7 5' marker-end='url(#b)'/>
+<text x='660' y='243' font-size='12' font-style='italic' fill='#5b21b6'>&lt;&lt;include&gt;&gt;</text>
+<line x1='598' y1='318' x2='805' y2='304' stroke='#7c3aed' stroke-width='1.6' stroke-dasharray='7 5' marker-end='url(#b)'/>
+<text x='660' y='330' font-size='12' font-style='italic' fill='#5b21b6'>&lt;&lt;include&gt;&gt;</text>
+<line x1='833' y1='168' x2='585' y2='213' stroke='#7c3aed' stroke-width='1.6' stroke-dasharray='7 5' marker-end='url(#b)'/>
+<text x='650' y='160' font-size='12' font-style='italic' fill='#5b21b6'>&lt;&lt;extend&gt;&gt;</text>
+<text x='620' y='176' font-size='12' fill='#5b21b6'>[solo si batería &lt; 40%]</text>
+<circle cx='80' cy='141' r='11' fill='none' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='152' x2='80' y2='185' stroke='#1e293b' stroke-width='2'/><line x1='60' y1='163' x2='100' y2='163' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='185' x2='64' y2='211' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='185' x2='96' y2='211' stroke='#1e293b' stroke-width='2'/><text x='80' y='231' text-anchor='middle' font-size='13' font-weight='700' fill='#0f172a'>Solicitante</text>
+<circle cx='80' cy='336' r='11' fill='none' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='347' x2='80' y2='380' stroke='#1e293b' stroke-width='2'/><line x1='60' y1='358' x2='100' y2='358' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='380' x2='64' y2='406' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='380' x2='96' y2='406' stroke='#1e293b' stroke-width='2'/><text x='80' y='426' text-anchor='middle' font-size='13' font-weight='700' fill='#0f172a'>Operador de drones</text>
+<circle cx='80' cy='556' r='11' fill='none' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='567' x2='80' y2='600' stroke='#1e293b' stroke-width='2'/><line x1='60' y1='578' x2='100' y2='578' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='600' x2='64' y2='626' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='600' x2='96' y2='626' stroke='#1e293b' stroke-width='2'/><text x='80' y='646' text-anchor='middle' font-size='13' font-weight='700' fill='#0f172a'>Admin</text>
+</svg>

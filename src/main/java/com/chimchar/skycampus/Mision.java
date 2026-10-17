@@ -13,7 +13,6 @@ public record Mision(
         String notas,
         LocalDateTime horaMaximaEntrega
 ) {
-    // Constructor compatible con el modelo anterior.
     public Mision(
             String id,
             Drone drone,

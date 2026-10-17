@@ -2,7 +2,7 @@ package com.chimchar.skycampus;
 
 import java.util.Map;
 
-public class ValidadorCarga extends ValidadorMision {
+public class ValidadorCarga extends Validador {
 
     private final Map<String, Double> capacidadesPorDrone;
     private final Map<TipoCarga, Double> pesosPorCarga;
