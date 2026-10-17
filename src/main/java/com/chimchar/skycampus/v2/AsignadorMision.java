@@ -21,6 +21,16 @@ public class AsignadorMision {
             return Optional.empty();
         }
 
+        flota.stream()
+                .filter(Drone::disponible)
+                .mapToInt(Drone::capacidadGramos)
+                .max()
+                .ifPresent(maximo -> {
+                    if (mision.pesoPaqueteGramos() > maximo) {
+                        throw new PaqueteMuyPesadoException(maximo);
+                    }
+                });
+
         return estrategia.seleccionar(flota, mision);
     }
 }
