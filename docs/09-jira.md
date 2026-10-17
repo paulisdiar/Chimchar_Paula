@@ -2,21 +2,25 @@
 
 ## Épica
 
+CHIM-1 en el proyecto Chimchar de Jira.
+
 Digitalizar el reparto interno de la ECI mediante una flota de drones supervisada.
 
 ## Feature
+
+CHIM-2.
 
 Gestión de flota de drones del campus.
 
 ## Historias de usuario
 
-**HU-1. Ver flota.** Como operador, quiero ver los drones con su batería, estado y ubicación para decidir cuál asignar a una misión.
+**HU-1 (CHIM-3). Ver flota.** Como operador, quiero ver los drones con su batería, estado y ubicación para decidir cuál asignar a una misión.
 
-**HU-2. Asignar drone a misión.** Como operador, quiero asignar un drone disponible a una misión pendiente para que el documento sea entregado en su destino.
+**HU-2 (CHIM-4). Asignar drone a misión.** Como operador, quiero asignar un drone disponible a una misión pendiente para que el documento sea entregado en su destino.
 
-**HU-3. Cancelar misión pendiente.** Como operador, quiero cancelar una misión que aún está pendiente para recuperar el control si la solicitud cambió o se registró por error.
+**HU-3 (CHIM-5). Cancelar misión pendiente.** Como operador, quiero cancelar una misión que aún está pendiente para recuperar el control si la solicitud cambió o se registró por error.
 
-## HU-2: subtareas
+## HU-2: subtareas (CHIM-6, CHIM-7, CHIM-8)
 
 1. Implementar la consulta que filtra drones disponibles con batería de 30% o más usando Stream.
 2. Implementar la cadena de validación (batería, destino y carga) con `ValidadorBateria`, `ValidadorDestino` y `ValidadorCarga`.

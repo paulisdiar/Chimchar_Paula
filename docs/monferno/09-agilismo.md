@@ -1,16 +1,18 @@
 # Monferno 09 - Sprint 1 de SkyCampus v2
 
+Épica CHIM-9. Sprint 1 creado en el tablero del proyecto CHIM.
+
 Velocidad del equipo: 20 puntos. Estimación en Fibonacci (1, 2, 3, 5, 8).
 
 ## Planificación
 
 | HU | Historia | Puntos | Entra al sprint |
 |---|---|---|---|
-| HU-S1 | Como operador, quiero que el sistema asigne automáticamente el drone de mayor batería para no elegirlo a mano en cada misión. | 5 | Sí |
-| HU-S2 | Como solicitante de un envío urgente, quiero que se asigne un drone EXPRESS para que mi paquete llegue lo más rápido posible. | 5 | Sí |
-| HU-S3 | Como operador, quiero que el sistema consulte el clima antes de lanzar para no poner en riesgo un drone. | 3 | Sí |
-| HU-S4 | Como técnico de mantenimiento, quiero recibir una alerta cuando un drone entra en FALLO para atenderlo de inmediato. | 5 | Sí |
-| HU-S5 | Como técnico de mantenimiento, quiero marcar un drone como reparado para que vuelva a estar disponible. | 3 | No |
+| HU-S1 (CHIM-10) | Como operador, quiero que el sistema asigne automáticamente el drone de mayor batería para no elegirlo a mano en cada misión. | 5 | Sí |
+| HU-S2 (CHIM-11) | Como solicitante de un envío urgente, quiero que se asigne un drone EXPRESS para que mi paquete llegue lo más rápido posible. | 5 | Sí |
+| HU-S3 (CHIM-12) | Como operador, quiero que el sistema consulte el clima antes de lanzar para no poner en riesgo un drone. | 3 | Sí |
+| HU-S4 (CHIM-13) | Como técnico de mantenimiento, quiero recibir una alerta cuando un drone entra en FALLO para atenderlo de inmediato. | 5 | Sí |
+| HU-S5 (CHIM-14) | Como técnico de mantenimiento, quiero marcar un drone como reparado para que vuelva a estar disponible. | 3 | No |
 
 Entran HU-S1, HU-S2, HU-S3 y HU-S4 con 18 puntos. HU-S5 sumaría 21 y superaría la velocidad de 20, por eso queda para el Sprint 2.
 
