@@ -1,0 +1,33 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600' font-family='Segoe UI, Arial, sans-serif'>
+<defs><marker id='a' markerWidth='10' markerHeight='8' refX='9' refY='4' orient='auto'><path d='M0,0 L10,4 L0,8 z' fill='#334155'/></marker></defs>
+<rect width='1000' height='600' fill='#ffffff'/>
+<text x='30' y='36' font-size='20' font-weight='700' fill='#0f172a'>SkyCampus MVP - Diagrama de contexto (C4 nivel 1)</text>
+<text x='30' y='58' font-size='13' fill='#475569'>Sistema como caja negra: actores y datos que fluyen en cada dirección</text>
+<rect x='640' y='90' width='300' height='450' rx='10' fill='#1e3a8a' stroke='#172554' stroke-width='2'/>
+<text x='790' y='290' text-anchor='middle' font-size='22' font-weight='700' fill='#fff'>SkyCampus App</text>
+<text x='790' y='318' text-anchor='middle' font-size='13' fill='#c7d2fe'>[Sistema de software]</text>
+<text x='790' y='342' text-anchor='middle' font-size='12' fill='#c7d2fe'>Reparto de documentos con drones</text>
+<rect x='50' y='110' width='210' height='80' rx='10' fill='#ede9fe' stroke='#7c3aed' stroke-width='2'/>
+<text x='155' y='144' text-anchor='middle' font-size='16' font-weight='700' fill='#2e1065'>Solicitante</text>
+<text x='155' y='166' text-anchor='middle' font-size='11.5' fill='#4c1d95'>[Persona] Persona que pide el reparto</text>
+<line x1='262' y1='138' x2='638' y2='138' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='450' y='132' text-anchor='middle' font-size='12' fill='#0f172a'>Origen, destino y tipo de carga</text>
+<line x1='638' y1='164' x2='262' y2='164' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='450' y='180' text-anchor='middle' font-size='12' fill='#475569'>Código de misión y estado de la entrega</text>
+<rect x='50' y='280' width='210' height='80' rx='10' fill='#ede9fe' stroke='#7c3aed' stroke-width='2'/>
+<text x='155' y='314' text-anchor='middle' font-size='16' font-weight='700' fill='#2e1065'>Operador de drones</text>
+<text x='155' y='336' text-anchor='middle' font-size='11.5' fill='#4c1d95'>[Persona] Asigna y confirma entregas</text>
+<line x1='262' y1='308' x2='638' y2='308' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='450' y='302' text-anchor='middle' font-size='12' fill='#0f172a'>Drone elegido y confirmación de entrega</text>
+<line x1='638' y1='334' x2='262' y2='334' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='450' y='350' text-anchor='middle' font-size='12' fill='#475569'>Drones disponibles con batería y estado de misiones</text>
+<rect x='50' y='450' width='210' height='80' rx='10' fill='#ede9fe' stroke='#7c3aed' stroke-width='2'/>
+<text x='155' y='484' text-anchor='middle' font-size='16' font-weight='700' fill='#2e1065'>Admin</text>
+<text x='155' y='506' text-anchor='middle' font-size='11.5' fill='#4c1d95'>[Persona] Configura destinos y flota</text>
+<line x1='262' y1='478' x2='638' y2='478' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='450' y='472' text-anchor='middle' font-size='12' fill='#0f172a'>Destinos válidos y datos de los drones</text>
+<line x1='638' y1='504' x2='262' y2='504' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='450' y='520' text-anchor='middle' font-size='12' fill='#475569'>Lista de destinos y flota registrada</text>
+<rect x='50' y='560' width='890' height='28' rx='6' fill='#f1f5f9' stroke='#cbd5e1'/>
+<text x='62' y='579' font-size='12.5' fill='#334155'>Sin sistemas externos en el MVP: los drones se controlan localmente. Línea continua: datos hacia el sistema. Línea punteada: datos hacia el actor.</text>
+</svg>

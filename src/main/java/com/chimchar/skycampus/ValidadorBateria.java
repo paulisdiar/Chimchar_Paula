@@ -1,6 +1,8 @@
 package com.chimchar.skycampus;
 
-public class ValidadorBateria extends ValidadorMision {
+public class ValidadorBateria extends Validador {
+
+    private final ValidadorMision validador = new ValidadorMision();
 
     @Override
     protected boolean validarRegla(Mision mision) {
@@ -9,11 +11,13 @@ public class ValidadorBateria extends ValidadorMision {
             return false;
         }
 
-        if (mision.drone().bateria() < 30) {
+        if (!validador.tieneBateriaSuficiente(mision.drone())) {
             System.out.println(
-                    "Rechazada: batería insuficiente ("
+                    "Rechazada: el drone " + mision.drone().id()
+                            + " tiene batería insuficiente ("
                             + mision.drone().bateria()
-                            + "%). Mínimo requerido: 30%."
+                            + "%). Mínimo requerido: "
+                            + ValidadorMision.BATERIA_MINIMA + "%."
             );
             return false;
         }

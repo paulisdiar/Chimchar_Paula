@@ -1,23 +1,32 @@
 package com.chimchar.skycampus;
 
-public abstract class ValidadorMision {
+import java.util.List;
 
-    private ValidadorMision siguiente;
+public class ValidadorMision {
 
-    public ValidadorMision establecerSiguiente(
-            ValidadorMision siguiente
-    ) {
-        this.siguiente = siguiente;
-        return siguiente;
+    public static final int BATERIA_MINIMA = 30;
+
+    public static final List<String> DESTINOS = List.of(
+            "Bloque A",
+            "Bloque B",
+            "Bloque C",
+            "Bloque D",
+            "Biblioteca"
+    );
+
+    public boolean tieneBateriaSuficiente(Drone drone) {
+        return drone.bateria() >= BATERIA_MINIMA;
     }
 
-    public final boolean validar(Mision mision) {
-        if (!validarRegla(mision)) {
-            return false;
+    public void validarDestino(String destino) {
+        if (destino == null || !DESTINOS.contains(destino)) {
+            throw new DestinoInvalidoException(
+                    "Destino inválido: " + destino
+            );
         }
-
-        return siguiente == null || siguiente.validar(mision);
     }
 
-    protected abstract boolean validarRegla(Mision mision);
+    public boolean droneEstaDisponible(Drone drone) {
+        return drone.disponible();
+    }
 }

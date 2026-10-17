@@ -11,7 +11,6 @@ public class MisionBuilder {
     private TipoCarga tipoCarga;
     private EstadoMision estado = EstadoMision.PENDIENTE;
 
-    // Campos opcionales
     private int prioridad = 3;
     private String notas = "";
     private LocalDateTime horaMaximaEntrega;

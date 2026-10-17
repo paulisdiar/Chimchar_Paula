@@ -2,7 +2,7 @@ package com.chimchar.skycampus;
 
 import java.util.List;
 
-public class ValidadorDestino extends ValidadorMision {
+public class ValidadorDestino extends Validador {
 
     private final List<String> destinosPermitidos;
 

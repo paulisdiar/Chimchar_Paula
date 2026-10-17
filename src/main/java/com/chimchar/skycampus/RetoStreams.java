@@ -23,8 +23,6 @@ public class RetoStreams {
                 new Drone("D-05", "DJI Mini 3", 67, true, "Bloque D")
         );
 
-        // Reto 1: IDs disponibles con batería >= 50%,
-        // ordenados de mayor a menor batería.
         List<String> dronesDisponibles = flota.stream()
                 .filter(Drone::disponible)
                 .filter(drone -> drone.bateria() >= 50)
@@ -36,7 +34,6 @@ public class RetoStreams {
         System.out.println("1. Drones disponibles con batería >= 50%:");
         System.out.println(dronesDisponibles);
 
-        // Reto 2: ¿Hay algún dron disponible en Bloque C?
         boolean disponibleEnBloqueC = flota.stream()
                 .anyMatch(drone ->
                         drone.disponible()
@@ -45,7 +42,6 @@ public class RetoStreams {
         System.out.println("\n2. ¿Hay un dron disponible en Bloque C?");
         System.out.println(disponibleEnBloqueC);
 
-        // Reto 3: Cantidad de drones con batería crítica (< 20%).
         long bateriaCritica = flota.stream()
                 .filter(drone -> drone.bateria() < 20)
                 .count();
@@ -53,7 +49,6 @@ public class RetoStreams {
         System.out.println("\n3. Drones con batería crítica:");
         System.out.println(bateriaCritica);
 
-        // Reto 4: ID y batería de todos los drones.
         List<String> estadoBaterias = flota.stream()
                 .map(drone ->
                         drone.id() + ": " + drone.bateria() + "%")
