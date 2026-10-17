@@ -7,13 +7,16 @@ public class AsignadorMision {
 
     private final ApiMeteorologica clima;
     private final EstrategiaAsignacion estrategia;
+    private final ObservadorDrone notificador;
 
     public AsignadorMision(
             ApiMeteorologica clima,
-            EstrategiaAsignacion estrategia
+            EstrategiaAsignacion estrategia,
+            ObservadorDrone notificador
     ) {
         this.clima = clima;
         this.estrategia = estrategia;
+        this.notificador = notificador;
     }
 
     public Optional<Drone> asignar(List<Drone> flota, Mision mision) {
@@ -21,6 +24,10 @@ public class AsignadorMision {
             return Optional.empty();
         }
 
-        return estrategia.seleccionar(flota, mision);
+        Optional<Drone> elegido = estrategia.seleccionar(flota, mision);
+
+        elegido.ifPresent(d -> notificador.onEstadoCambiado(d, EstadoDrone.EN_VUELO));
+
+        return elegido;
     }
 }
