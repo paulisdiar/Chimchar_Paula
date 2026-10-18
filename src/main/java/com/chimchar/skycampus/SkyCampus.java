@@ -2,12 +2,27 @@ package com.chimchar.skycampus;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class SkyCampus {
 
     private static final List<Drone> drones = new ArrayList<>();
     private static final List<Mision> misiones = new ArrayList<>();
+
+    private static final Map<String, Double> CAPACIDADES = Map.of(
+            "D1", 0.5,
+            "D2", 0.5,
+            "D3", 0.5,
+            "D4", 0.5,
+            "D5", 0.5
+    );
+
+    private static final Map<TipoCarga, Double> PESOS = Map.of(
+            TipoCarga.SOBRE, 0.05,
+            TipoCarga.CARPETA, 0.2,
+            TipoCarga.LIBRO, 0.5
+    );
 
     public static void main(String[] args) {
         inicializarDrones();
@@ -66,11 +81,11 @@ public class SkyCampus {
 
         for (Drone drone : drones) {
             System.out.println(
-                    "ID: " + drone.getId()
-                            + " | Modelo: " + drone.getModelo()
-                            + " | Batería: " + drone.getBateria()
-                            + " | Disponible: " + drone.isDisponible()
-                            + " | Ubicación: " + drone.getUbicacion()
+                    "ID: " + drone.id()
+                            + " | Modelo: " + drone.modelo()
+                            + " | Batería: " + drone.bateria()
+                            + " | Disponible: " + drone.disponible()
+                            + " | Ubicación: " + drone.ubicacion()
             );
         }
     }
@@ -113,15 +128,17 @@ public class SkyCampus {
 
         Mision mision = new Mision(
                 "M" + (misiones.size() + 1),
+                null,
                 origen,
                 destino,
-                tipoCarga
+                tipoCarga,
+                EstadoMision.PENDIENTE
         );
 
         misiones.add(mision);
 
         System.out.println(
-                "Solicitud registrada: " + mision.getId()
+                "Solicitud registrada: " + mision.id()
         );
 
         asignarDrone(scanner, mision);
@@ -166,12 +183,12 @@ public class SkyCampus {
         List<Drone> disponibles = new ArrayList<>();
 
         for (Drone drone : drones) {
-            if (drone.isDisponible()) {
+            if (drone.disponible()) {
                 disponibles.add(drone);
 
                 System.out.println(
-                        drone.getId()
-                                + " | Batería: " + drone.getBateria()
+                        drone.id()
+                                + " | Batería: " + drone.bateria()
                 );
             }
         }
@@ -187,7 +204,7 @@ public class SkyCampus {
         Drone seleccionado = null;
 
         for (Drone drone : disponibles) {
-            if (drone.getId().equalsIgnoreCase(idDrone)) {
+            if (drone.id().equalsIgnoreCase(idDrone)) {
                 seleccionado = drone;
                 break;
             }
@@ -198,47 +215,157 @@ public class SkyCampus {
             return;
         }
 
-        seleccionado.setDisponible(false);
-        mision.asignarDrone(seleccionado);
-
-        System.out.println(
-                "Dron " + seleccionado.getId()
-                        + " asignado a la misión " + mision.getId()
+        Mision candidata = new Mision(
+                mision.id(),
+                seleccionado,
+                mision.origen(),
+                mision.destino(),
+                mision.tipoCarga(),
+                mision.estado()
         );
 
-        ejecutarMision(scanner, mision);
+        if (!crearValidacion().validar(candidata)) {
+            return;
+        }
+
+        Drone droneAsignado = new Drone(
+                seleccionado.id(),
+                seleccionado.modelo(),
+                seleccionado.bateria(),
+                false,
+                seleccionado.ubicacion()
+        );
+
+        actualizarDrone(droneAsignado);
+
+        Mision misionAsignada = new Mision(
+                mision.id(),
+                droneAsignado,
+                mision.origen(),
+                mision.destino(),
+                mision.tipoCarga(),
+                mision.estado()
+        );
+
+        actualizarMision(misionAsignada);
+
+        System.out.println(
+                "Dron " + droneAsignado.id()
+                        + " asignado a la misión " + misionAsignada.id()
+        );
+
+        ejecutarMision(scanner, misionAsignada);
+    }
+
+    private static Validador crearValidacion() {
+        Validador bateria = new ValidadorBateria();
+
+        bateria.establecerSiguiente(
+                        new ValidadorDestino(ValidadorMision.DESTINOS)
+                )
+                .establecerSiguiente(
+                        new ValidadorCarga(CAPACIDADES, PESOS)
+                );
+
+        return bateria;
     }
 
     private static void ejecutarMision(
             Scanner scanner,
             Mision mision
     ) {
-        mision.setEstado(EstadoMision.EN_VUELO);
+        Mision misionEnVuelo = new Mision(
+                mision.id(),
+                mision.drone(),
+                mision.origen(),
+                mision.destino(),
+                mision.tipoCarga(),
+                EstadoMision.EN_VUELO
+        );
+
+        actualizarMision(misionEnVuelo);
 
         System.out.println("\n=== EJECUCIÓN DE MISIÓN ===");
         System.out.println(
                 "Ruta predefinida: "
-                        + mision.getOrigen() + " -> " + mision.getDestino()
+                        + misionEnVuelo.origen()
+                        + " -> "
+                        + misionEnVuelo.destino()
         );
 
         System.out.print("¿La entrega fue confirmada? (S/N): ");
         String respuesta = scanner.nextLine().trim();
 
         if (respuesta.equalsIgnoreCase("S")) {
-            mision.setEstado(EstadoMision.ENTREGADA);
-            mision.getDrone().setUbicacion(mision.getDestino());
-            mision.getDrone().setDisponible(true);
+            Mision misionEntregada = new Mision(
+                    misionEnVuelo.id(),
+                    misionEnVuelo.drone(),
+                    misionEnVuelo.origen(),
+                    misionEnVuelo.destino(),
+                    misionEnVuelo.tipoCarga(),
+                    EstadoMision.ENTREGADA
+            );
+
+            actualizarMision(misionEntregada);
+
+            Drone droneActualizado = new Drone(
+                    misionEnVuelo.drone().id(),
+                    misionEnVuelo.drone().modelo(),
+                    misionEnVuelo.drone().bateria(),
+                    true,
+                    misionEnVuelo.destino()
+            );
+
+            actualizarDrone(droneActualizado);
 
             System.out.println("Entrega confirmada.");
+
         } else if (respuesta.equalsIgnoreCase("N")) {
-            mision.setEstado(EstadoMision.FALLIDA);
-            mision.getDrone().setDisponible(true);
+            Mision misionFallida = new Mision(
+                    misionEnVuelo.id(),
+                    misionEnVuelo.drone(),
+                    misionEnVuelo.origen(),
+                    misionEnVuelo.destino(),
+                    misionEnVuelo.tipoCarga(),
+                    EstadoMision.FALLIDA
+            );
+
+            actualizarMision(misionFallida);
+
+            Drone droneActualizado = new Drone(
+                    misionEnVuelo.drone().id(),
+                    misionEnVuelo.drone().modelo(),
+                    misionEnVuelo.drone().bateria(),
+                    true,
+                    misionEnVuelo.drone().ubicacion()
+            );
+
+            actualizarDrone(droneActualizado);
 
             System.out.println("Misión marcada como fallida.");
+
         } else {
             System.out.println(
                     "Respuesta inválida. La misión permanece en vuelo."
             );
+        }
+    }
+
+    private static void actualizarDrone(Drone droneActualizado) {
+        for (int i = 0; i < drones.size(); i++) {
+            if (drones.get(i).id().equals(droneActualizado.id())) {
+                drones.set(i, droneActualizado);
+                return;
+            }
+        }
+    }
+
+    private static void actualizarMision(Mision misionActualizada) {
+        for (int i = 0; i < misiones.size(); i++) {
+            if (misiones.get(i).id().equals(misionActualizada.id())) {
+                misiones.set(i, misionActualizada);
+                return;
+            }
         }
     }
 
@@ -251,17 +378,17 @@ public class SkyCampus {
         }
 
         for (Mision mision : misiones) {
-            String idDrone = mision.getDrone() == null
+            String idDrone = mision.drone() == null
                     ? "Sin asignar"
-                    : mision.getDrone().getId();
+                    : mision.drone().id();
 
             System.out.println(
-                    "ID: " + mision.getId()
-                            + " | Origen: " + mision.getOrigen()
-                            + " | Destino: " + mision.getDestino()
-                            + " | Carga: " + mision.getTipoCarga()
+                    "ID: " + mision.id()
+                            + " | Origen: " + mision.origen()
+                            + " | Destino: " + mision.destino()
+                            + " | Carga: " + mision.tipoCarga()
                             + " | Dron: " + idDrone
-                            + " | Estado: " + mision.getEstado()
+                            + " | Estado: " + mision.estado()
             );
         }
     }
