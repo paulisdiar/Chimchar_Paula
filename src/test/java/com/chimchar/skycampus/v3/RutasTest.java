@@ -15,6 +15,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class RutasTest {
@@ -78,5 +79,11 @@ class RutasTest {
         assertEquals(TipoDrone.CARGO, planificador.droneParaEtapa(corto, 900, "D-90").tipo());
         assertEquals(TipoDrone.EXPRESS, planificador.droneParaEtapa(largo, 200, "D-91").tipo());
         assertEquals(TipoDrone.MINI, planificador.droneParaEtapa(corto, 200, "D-92").tipo());
+    }
+
+    @Test
+    @DisplayName("Una distancia que no es positiva no genera ruta")
+    void distanciaNoPositiva() {
+        assertThrows(IllegalArgumentException.class, () -> planificador.dividir("ECI", "UNAL", 0));
     }
 }
