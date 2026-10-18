@@ -24,7 +24,7 @@ La capa de integración usa repositorios en memoria en lugar de H2 y llama a `Ap
 
 | Contador | Resultado |
 |---|---|
-| LINE | 90.4 % (672 de 743) |
-| BRANCH | 85.8 % (169 de 197) |
+| LINE | 90.5 % (674 de 745) |
+| BRANCH | 85.9 % (171 de 199) |
 
-Las 93 pruebas pasan. La regla `check` del `pom.xml` exige LINE 85 % y BRANCH 75 %.
+Las 94 pruebas pasan. La regla `check` del `pom.xml` exige LINE 85 % y BRANCH 75 %.

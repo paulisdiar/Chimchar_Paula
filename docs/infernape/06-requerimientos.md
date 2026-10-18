@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|
 | RF-12 | Asignar misión inter-sede con el drone apto de mayor batería de la sede de origen | Must | CU-E02 | CHIM-17 | `AsignadorMisionTest.asignaMayorBateria`, `ApiMisionesIntegracionTest.climaAptoCreaMision` |
 | RF-13 | Pedir autorización a Aerocivil antes de asignar | Must | CU-E05 | CHIM-19 | `AsignadorMisionTest.aerocivilRechaza`, `ApiMisionesIntegracionTest.aerocivilRechaza` |
-| RF-14 | Planificar la ruta en tramos de máximo 5 km, con estación de carga y el tipo de drone adecuado por etapa | Must | CU-E06, CU-E07 | CHIM-20, CHIM-21, CHIM-23 | `RutasTest.divideEnTramos`, `RutasTest.fabricaPorTramo` |
+| RF-14 | Planificar la ruta en tramos de máximo 5 km, con estación de carga y el tipo de drone adecuado por etapa | Must | CU-E06, CU-E07 | CHIM-20, CHIM-21, CHIM-23 | `RutasTest.divideEnTramos`, `RutasTest.fabricaPorTramo`, `RutasTest.distanciaNoPositiva` |
 | RF-15 | Avisar cada etapa completada de la ruta | Should | CU-E08 | CHIM-22 | `RutasTest.observadorDeEtapas` |
 | RF-16 | Rechazar misiones de una sede inactiva | Must | CU-E12 | CHIM-16 | `AsignadorMisionTest.sedeInactiva`, `ApiMisionesIntegracionTest.sedeInactiva` |
 | RF-17 | Rechazar un paquete más pesado que cualquier drone apto de la sede | Must | CU-E02 (flujo alterno) | CHIM-18 | `AsignadorMisionTest.paqueteMuyPesado`, `ApiMisionesIntegracionTest.paquetePesado` |

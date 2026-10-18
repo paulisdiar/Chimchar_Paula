@@ -13,7 +13,7 @@
 
 ## Medido localmente con JaCoCo
 
-LINE 90.4 % y BRANCH 85.8 %, por encima de los mínimos de Enterprise.
+LINE 90.5 % y BRANCH 85.9 %, por encima de los mínimos de Enterprise.
 
 ## Pendiente
 

@@ -10,7 +10,7 @@
 - feat: asignación de misiones inter-sede con clima, autorización de Aerocivil y validación de capacidad.
 - feat: rutas multi-etapa con Composite, Strategy, Observer y Factory Method.
 - feat: analytics por sede en una sola pasada de Stream.
-- test: tres capas de pruebas con cobertura de 90.4 % en líneas y 85.8 % en ramas.
+- test: tres capas de pruebas con cobertura de 90.5 % en líneas y 85.9 % en ramas.
 - docs: documentación de Infernape en `docs/infernape`.
 
 ## 2.0.0
