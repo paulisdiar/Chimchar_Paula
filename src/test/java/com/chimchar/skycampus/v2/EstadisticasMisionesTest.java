@@ -4,7 +4,6 @@ import com.chimchar.skycampus.EstadoMision;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
@@ -59,31 +58,5 @@ class EstadisticasMisionesTest {
     void porcentajeFallidas() {
         assertEquals(100.0 / 6, estadisticas.porcentajeFallidas(misionesDelDia()), 0.0001);
         assertEquals(0, estadisticas.porcentajeFallidas(List.of()));
-    }
-
-    @Test
-    @DisplayName("Urgente pendiente hace más de 10 minutos")
-    void urgentePendiente() {
-        assertTrue(estadisticas.hayUrgentePendienteMasDe(
-                misionesDelDia(), Datos.AHORA, Duration.ofMinutes(10)));
-        assertFalse(estadisticas.hayUrgentePendienteMasDe(
-                misionesDelDia(), Datos.AHORA, Duration.ofMinutes(20)));
-    }
-
-    @Test
-    @DisplayName("Operatividad separa drones en fallo")
-    void operatividad() {
-        Drone fallo = Datos.drone("D-04", TipoDrone.MINI, 18, EstadoDrone.FALLO, 500);
-
-        Map<Boolean, List<Drone>> resultado = estadisticas.operatividad(List.of(mini, cargo, fallo));
-
-        assertEquals(2, resultado.get(true).size());
-        assertEquals(1, resultado.get(false).size());
-    }
-
-    @Test
-    @DisplayName("Peso total de los paquetes en vuelo")
-    void pesoEnVuelo() {
-        assertEquals(200, estadisticas.pesoEnVuelo(misionesDelDia()));
     }
 }

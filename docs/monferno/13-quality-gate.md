@@ -13,11 +13,24 @@ La regla `check` de JaCoCo en el `pom.xml` hace fallar `mvn verify` si la cobert
 
 | Contador | Resultado |
 |---|---|
-| LINE | 92.2% (506 de 549) |
-| BRANCH | 88.7% (141 de 159) |
+| LINE | 89.4% (491 de 549) |
+| BRANCH | 81.8% (130 de 159) |
 
-Las 70 pruebas pasan.
+Las 65 pruebas pasan.
 
-## Pendiente
+## SonarCloud
 
-El análisis con SonarQube (0 bugs, 0 vulnerabilidades, deuda técnica de 30 min o menos, Quality Gate en verde y las capturas del dashboard antes y después) no se ha ejecutado, porque requiere una instancia de SonarQube. Los comandos están en el `README.md` y las propiedades `sonar.*` ya están en el `pom.xml`.
+Organización `paulisdiar`, proyecto `paulisdiar_Chimchar_Paula`, Quality Gate "Sonar way".
+
+Primer análisis de la rama `main` (392 líneas de código, solo el código base):
+
+| Medida | Resultado |
+|---|---|
+| Security | 0 issues, calificación A |
+| Reliability | 0 issues, calificación A |
+| Maintainability | 57 issues, calificación A |
+| Duplications | 0.0% |
+| Coverage | sin datos todavía |
+| Quality Gate | no calculado |
+
+Cobertura y Quality Gate quedan sin calcular porque ese análisis fue automático y no recibe el reporte de JaCoCo. El workflow `.github/workflows/sonar.yml` ejecuta `mvn verify` y `sonar:sonar` con el secreto `SONAR_TOKEN` en cada push a `main` y `develop`. Las capturas del dashboard antes y después se toman con el primer análisis de ese workflow.

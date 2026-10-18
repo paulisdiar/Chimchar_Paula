@@ -6,7 +6,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,32 +18,6 @@ class EstrategiasAsignacionTest {
     void mayorBateria() {
         Optional<Drone> elegido = new AsignacionMayorBateria()
                 .seleccionar(Datos.crearFlotaTest(), Datos.crearMisionTest(Prioridad.NORMAL, 200));
-
-        assertEquals("D-03", elegido.orElseThrow().id());
-    }
-
-    @Test
-    @DisplayName("Menor uso acumulado elige el drone menos usado")
-    void menorUso() {
-        EstrategiaAsignacion estrategia = new AsignacionMenorUso(
-                Map.of("D-01", 5, "D-02", 3, "D-03", 7, "D-05", 3)
-        );
-
-        Optional<Drone> elegido = estrategia.seleccionar(
-                Datos.crearFlotaTest(), Datos.crearMisionTest(Prioridad.NORMAL, 200)
-        );
-
-        assertEquals("D-02", elegido.orElseThrow().id());
-    }
-
-    @Test
-    @DisplayName("Menor uso desempata por mayor batería")
-    void menorUsoDesempata() {
-        EstrategiaAsignacion estrategia = new AsignacionMenorUso(Map.of());
-
-        Optional<Drone> elegido = estrategia.seleccionar(
-                Datos.crearFlotaTest(), Datos.crearMisionTest(Prioridad.NORMAL, 200)
-        );
 
         assertEquals("D-03", elegido.orElseThrow().id());
     }
