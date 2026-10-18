@@ -1,5 +1,9 @@
 # Cambios
 
+## 3.0.1
+
+- fix: la planificación rechaza distancias no positivas.
+
 ## 3.0.0
 
 - feat: SkyCampus Enterprise con red de 4 sedes y capas dominio, aplicación e infraestructura.
