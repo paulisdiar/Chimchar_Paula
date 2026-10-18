@@ -2,7 +2,7 @@
 
 ## Configurado
 
-La regla `check` de JaCoCo en el `pom.xml` hace fallar `mvn verify` si la cobertura baja de:
+En Monferno la regla `check` de JaCoCo hacía fallar `mvn verify` si la cobertura bajaba de lo siguiente. En Infernape el `pom.xml` sube los mínimos a 85 % y 75 %:
 
 | Contador | Mínimo |
 |---|---|

@@ -1,4 +1,4 @@
-# SkyCampus - Chimchar y Monferno
+# SkyCampus - Chimchar, Monferno e Infernape
 
 Sistema de reparto de documentos con drones de la ECI: 5 drones del mismo modelo, destinos fijos (Bloque A, B, C, D y Biblioteca) y un operador que asigna el drone a mano.
 
@@ -58,3 +58,23 @@ mvn verify sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.token=TU_T
 | 11 Mocks | `docs/monferno/11-mocks.md` y `docs/monferno/mock/` |
 | 12 TDD | `v2/AsignadorMision` y `src/test/java/com/chimchar/skycampus/v2` |
 | 13 Quality Gate | `pom.xml` y `docs/monferno/13-quality-gate.md` |
+
+## Infernape
+
+El paquete `com.chimchar.skycampus.v3` es SkyCampus Enterprise: red de 4 sedes con rutas multi-etapa, autorización de Aerocivil y analytics, organizado en capas `dominio`, `aplicacion` e `infraestructura`.
+
+| Reto | Dónde está |
+|---|---|
+| 01 Streams | `v3/aplicacion/AnalisisRed` y `docs/infernape/01-analytics.md` |
+| 02 GitFlow | `docs/infernape/02-gitflow.md` y los tags `v3.0.0` y `v3.0.1` |
+| 03 Patrones | `v3/dominio/ruta` y `docs/infernape/03-patrones.md` |
+| 04 SOLID | `v3/aplicacion/AsignadorMision` y `docs/infernape/04-solid.md` |
+| 05 Contexto | `docs/infernape/05-contexto.md` |
+| 06 RF y RNF | `docs/infernape/06-requerimientos.md` |
+| 07 Plantilla DOSW | `docs/infernape/07-plantilla-dosw.md` |
+| 08 Design tokens | `docs/infernape/08-design-tokens.md` y `docs/infernape/mock/tokens-sedes.html` |
+| 09 Agilismo | `docs/infernape/09-agilismo.md` |
+| 10 Casos de uso | `docs/infernape/10-casos-de-uso.md` |
+| 11 Prototipo | `docs/infernape/11-prototipo.md` y `docs/infernape/mock/prototipo-dashboard.html` |
+| 12 TDD | `src/test/java/com/chimchar/skycampus/v3` y `docs/infernape/12-pruebas.md` |
+| 13 Quality Gate | `pom.xml` y `docs/infernape/13-quality-gate.md` |

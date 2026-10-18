@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkyCampus Enterprise - Tokens por sede</title>
+<style>
+:root{--radio:10px;--espacio:16px;--fuente:'Inter','Segoe UI',Arial,sans-serif;--mono:'JetBrains Mono',Consolas,monospace;--disponible:#22C55E;--vuelo:#3B82F6;--carga:#EAB308;--fallo:#EF4444;--mantenimiento:#9CA3AF}
+[data-sede='eci']{--fondo:#0B1020;--superficie:#131A2E;--primario:#1E3A8A;--acento:#7C3AED;--texto:#E5EAF5;--texto-sec:#94A3B8;--sobre-primario:#FFFFFF;--sobre-acento:#FFFFFF}
+[data-sede='unal']{--fondo:#0A1F14;--superficie:#10301F;--primario:#166534;--acento:#FACC15;--texto:#ECFDF3;--texto-sec:#9CC5AB;--sobre-primario:#FFFFFF;--sobre-acento:#1A1A00}
+[data-sede='uniandes']{--fondo:#111111;--superficie:#1C1C1C;--primario:#FFD100;--acento:#FFFFFF;--texto:#F5F5F5;--texto-sec:#A3A3A3;--sobre-primario:#111111;--sobre-acento:#111111}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fuente);background:#e5e7eb;padding:24px;display:flex;flex-direction:column;gap:24px;align-items:center}
+.sede{width:100%;max-width:760px;background:var(--fondo);color:var(--texto);border-radius:var(--radio);overflow:hidden}
+.barra{background:var(--primario);color:var(--sobre-primario);padding:var(--espacio);display:flex;justify-content:space-between;font-weight:600}
+.cuerpo{display:grid;grid-template-columns:1fr 1fr;gap:var(--espacio);padding:var(--espacio)}
+article{background:var(--superficie);border-radius:var(--radio);padding:var(--espacio);display:flex;flex-direction:column;gap:12px}
+h2{font-size:1rem}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.9rem}
+dt{color:var(--texto-sec)}
+.mono{font-family:var(--mono)}
+.progreso,.bar{height:8px;background:var(--fondo);border-radius:4px;overflow:hidden}
+.progreso div,.bar div{height:100%;background:var(--acento)}
+.fila{display:flex;justify-content:space-between;align-items:center}
+.tipo{color:var(--texto-sec);font-size:.85rem}
+.bat{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.estado{display:inline-flex;gap:6px;align-items:center;font-size:.85rem}
+.estado i{width:10px;height:10px;border-radius:50%;background:var(--vuelo)}
+.accion{background:var(--acento);color:var(--sobre-acento);border:0;border-radius:var(--radio);padding:10px 14px;font-weight:600;cursor:pointer}
+@media(max-width:620px){.cuerpo{grid-template-columns:1fr}}
+</style></head><body>
+<section class="sede" data-sede="eci">
+<header class="barra"><span class="logo">SkyCampus</span><span class="sede-nombre">ECI</span></header>
+<div class="cuerpo">
+<article class="mision">
+<h2>Misión activa M-27</h2>
+<dl><dt>Ruta</dt><dd>ECI a UNAL</dd><dt>Etapa</dt><dd>2 de 3</dd><dt>Drone</dt><dd class="mono">D-03</dd></dl>
+<div class="progreso"><div style="width:66%"></div></div>
+<button class="accion">Ver detalle</button>
+</article>
+<article class="drone">
+<div class="fila"><span class="mono">D-03</span><span class="estado vuelo"><i></i>En vuelo</span></div>
+<div class="tipo">EXPRESS · ECI</div>
+<div class="bat"><div class="bar"><div style="width:67%"></div></div><span class="mono">67%</span></div>
+<button class="accion">Asignar misión</button>
+</article>
+</div>
+</section>
+<section class="sede" data-sede="unal">
+<header class="barra"><span class="logo">SkyCampus</span><span class="sede-nombre">UNAL</span></header>
+<div class="cuerpo">
+<article class="mision">
+<h2>Misión activa M-27</h2>
+<dl><dt>Ruta</dt><dd>UNAL a ECI</dd><dt>Etapa</dt><dd>2 de 3</dd><dt>Drone</dt><dd class="mono">D-03</dd></dl>
+<div class="progreso"><div style="width:66%"></div></div>
+<button class="accion">Ver detalle</button>
+</article>
+<article class="drone">
+<div class="fila"><span class="mono">D-03</span><span class="estado vuelo"><i></i>En vuelo</span></div>
+<div class="tipo">EXPRESS · UNAL</div>
+<div class="bat"><div class="bar"><div style="width:67%"></div></div><span class="mono">67%</span></div>
+<button class="accion">Asignar misión</button>
+</article>
+</div>
+</section>
+<section class="sede" data-sede="uniandes">
+<header class="barra"><span class="logo">SkyCampus</span><span class="sede-nombre">Uniandes</span></header>
+<div class="cuerpo">
+<article class="mision">
+<h2>Misión activa M-27</h2>
+<dl><dt>Ruta</dt><dd>Uniandes a UNAL</dd><dt>Etapa</dt><dd>2 de 3</dd><dt>Drone</dt><dd class="mono">D-03</dd></dl>
+<div class="progreso"><div style="width:66%"></div></div>
+<button class="accion">Ver detalle</button>
+</article>
+<article class="drone">
+<div class="fila"><span class="mono">D-03</span><span class="estado vuelo"><i></i>En vuelo</span></div>
+<div class="tipo">EXPRESS · Uniandes</div>
+<div class="bat"><div class="bar"><div style="width:67%"></div></div><span class="mono">67%</span></div>
+<button class="accion">Asignar misión</button>
+</article>
+</div>
+</section>
+</body></html>

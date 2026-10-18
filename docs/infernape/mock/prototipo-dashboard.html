@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkyCampus Enterprise - Prototipo</title>
+<style>
+:root{--radio:10px;--fuente:'Inter','Segoe UI',Arial,sans-serif;--mono:'JetBrains Mono',Consolas,monospace;--disponible:#22C55E;--vuelo:#3B82F6;--carga:#EAB308;--fallo:#EF4444;--mantenimiento:#9CA3AF}
+[data-sede='eci']{--fondo:#0B1020;--superficie:#131A2E;--primario:#1E3A8A;--acento:#7C3AED;--texto:#E5EAF5;--texto-sec:#94A3B8;--sobre-primario:#FFFFFF;--sobre-acento:#FFFFFF}
+[data-sede='unal']{--fondo:#0A1F14;--superficie:#10301F;--primario:#166534;--acento:#FACC15;--texto:#ECFDF3;--texto-sec:#9CC5AB;--sobre-primario:#FFFFFF;--sobre-acento:#1A1A00}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fuente);background:var(--fondo);color:var(--texto);min-height:100vh;font-size:15px}
+.barra{background:var(--primario);color:var(--sobre-primario);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:1.1rem}
+.identidad{display:flex;gap:8px;align-items:center;font-size:.85rem}
+.identidad button{background:transparent;color:var(--sobre-primario);border:1px solid var(--sobre-primario);border-radius:var(--radio);padding:6px 12px;cursor:pointer;font-weight:600}
+.identidad button[aria-pressed='true']{background:var(--sobre-primario);color:var(--primario)}
+main{padding:20px;max-width:1100px;margin:0 auto;display:grid;gap:20px}
+h2{font-size:1.05rem;margin-bottom:10px}
+.red{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.sede{background:var(--superficie);border-radius:var(--radio);padding:14px;display:flex;flex-direction:column;gap:8px;border:2px solid transparent}
+.sede.inactiva{opacity:.65;border-color:var(--fallo)}
+.sede .nombre{display:flex;justify-content:space-between;font-weight:600}
+.etiqueta{font-size:.8rem;color:var(--texto-sec)}
+.conteos{display:flex;gap:10px;flex-wrap:wrap;font-size:.85rem}
+.punto{display:inline-flex;align-items:center;gap:5px}
+.punto i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.disp i{background:var(--disponible)}.vuelo i{background:var(--vuelo)}.carga i{background:var(--carga)}.fallo i{background:var(--fallo)}
+button.accion{background:var(--acento);color:var(--sobre-acento);border:0;border-radius:var(--radio);padding:10px 16px;font-weight:600;cursor:pointer;font-size:.95rem}
+button.accion:disabled{opacity:.5;cursor:not-allowed}
+button.suave{background:transparent;color:var(--texto);border:1px solid var(--texto-sec);border-radius:var(--radio);padding:6px 12px;cursor:pointer}
+.plan{background:var(--superficie);border-radius:var(--radio);padding:18px}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;align-items:end}
+label{display:flex;flex-direction:column;gap:4px;font-size:.85rem;color:var(--texto-sec)}
+select,input{background:var(--fondo);color:var(--texto);border:1px solid var(--texto-sec);border-radius:var(--radio);padding:9px}
+.ayuda{font-size:.75rem;color:var(--texto-sec)}
+.error-campo{font-size:.8rem;color:var(--fallo);min-height:1em}
+.resultado{margin-top:16px}
+.aviso{border-radius:var(--radio);padding:12px 14px;border-left:5px solid;background:var(--fondo)}
+.aviso.error{border-color:var(--fallo)}.aviso.ok{border-color:var(--disponible)}.aviso.info{border-color:var(--vuelo)}
+.aviso strong{display:block;margin-bottom:4px}
+.aviso .acciones{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.pasos{list-style:none;display:grid;gap:8px;margin-bottom:14px}
+.pasos li{display:flex;gap:10px;align-items:center;color:var(--texto-sec)}
+.pasos li.hecho{color:var(--texto)}.pasos li.actual{color:var(--texto);font-weight:600}
+.pasos .marca{width:22px;height:22px;border-radius:50%;border:2px solid var(--texto-sec);display:inline-flex;align-items:center;justify-content:center;font-size:.75rem}
+.pasos li.hecho .marca{background:var(--disponible);border-color:var(--disponible);color:#0B1020}
+.pasos li.actual .marca{border-color:var(--acento);border-top-color:transparent;animation:giro 0.8s linear infinite}
+@keyframes giro{to{transform:rotate(360deg)}}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.9rem}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--fondo)}
+.mono{font-family:var(--mono)}
+.seguimiento{display:flex;gap:8px;margin:10px 0}
+.etapa{flex:1;border-radius:var(--radio);padding:8px;background:var(--fondo);text-align:center;font-size:.8rem;border-top:4px solid var(--texto-sec)}
+.etapa.completa{border-color:var(--disponible)}.etapa.vuelo{border-color:var(--vuelo)}
+.sr{position:absolute;left:-9999px}
+</style></head>
+<body data-sede="eci">
+<header class="barra">
+<span class="logo">SkyCampus Enterprise</span>
+<div class="identidad" role="group" aria-label="Identidad de la sede">
+<span>Identidad:</span>
+<button type="button" data-tema="eci" aria-pressed="true">ECI</button>
+<button type="button" data-tema="unal" aria-pressed="false">UNAL</button>
+</div>
+</header>
+<main>
+<section aria-labelledby="t-red">
+<h2 id="t-red">Red de sedes <span class="etiqueta" id="actualizado"></span></h2>
+<div class="red" id="red"></div>
+</section>
+<section class="plan" aria-labelledby="t-plan">
+<h2 id="t-plan">Planificar ruta entre sedes</h2>
+<form id="form" novalidate>
+<label>Sede de origen<select id="origen"></select><span class="error-campo" id="e-origen"></span></label>
+<label>Sede de destino<select id="destino"></select><span class="error-campo" id="e-destino"></span></label>
+<label>Peso del paquete (g)<input id="peso" type="number" min="1" value="300"><span class="ayuda">Entre 1 y 2000 g</span><span class="error-campo" id="e-peso"></span></label>
+<label>Prioridad<select id="prioridad"><option>NORMAL</option><option>URGENTE</option><option>BAJO</option></select></label>
+<button class="accion" type="submit" id="planificar">Planificar ruta</button>
+</form>
+<div class="resultado" id="resultado" aria-live="polite"></div>
+</section>
+</main>
+<script>
+const DIST={'ECI-UNAL':4200,'ECI-UNIANDES':9500,'ECI-JAVERIANA':14000,'UNAL-UNIANDES':6000,'UNAL-JAVERIANA':8000,'UNIANDES-JAVERIANA':3500};
+const NOMBRES={ECI:'ECI',UNAL:'UNAL',UNIANDES:'Uniandes',JAVERIANA:'Javeriana'};
+const sedes={
+ECI:{activa:true,viento:12,disp:11,vuelo:5,carga:2,fallo:1},
+UNAL:{activa:true,viento:38,disp:9,vuelo:6,carga:3,fallo:0},
+UNIANDES:{activa:true,viento:15,disp:12,vuelo:4,carga:2,fallo:1},
+JAVERIANA:{activa:true,viento:10,disp:10,vuelo:5,carga:3,fallo:2}};
+let seguimiento=null;
+const $=id=>document.getElementById(id);
+function distancia(a,b){return DIST[a+'-'+b]||DIST[b+'-'+a];}
+function pintarRed(){
+$('red').innerHTML=Object.entries(sedes).map(([k,s])=>`<article class="sede ${s.activa?'':'inactiva'}">
+<div class="nombre"><span>${NOMBRES[k]}</span><span class="etiqueta">${s.activa?'Activa':'Inactiva'}</span></div>
+<div class="conteos"><span class="punto disp"><i></i>${s.disp} disponibles</span><span class="punto vuelo"><i></i>${s.vuelo} en vuelo</span><span class="punto carga"><i></i>${s.carga} en carga</span><span class="punto fallo"><i></i>${s.fallo} en fallo</span></div>
+<div class="etiqueta">Viento ${s.viento} km/h</div>
+<button class="suave" data-sede-toggle="${k}">${s.activa?'Desactivar sede':'Activar sede'}</button>
+</article>`).join('');
+$('actualizado').textContent='Actualizado '+new Date().toLocaleTimeString('es-CO');
+}
+function llenarSelects(){
+const op=Object.keys(sedes).map(k=>`<option value="${k}">${NOMBRES[k]}</option>`).join('');
+$('origen').innerHTML=op;$('destino').innerHTML=op;$('destino').value='UNAL';
+}
+function validar(){
+let ok=true;
+$('e-origen').textContent='';$('e-destino').textContent='';$('e-peso').textContent='';
+if($('origen').value===$('destino').value){$('e-destino').textContent='El destino debe ser otra sede.';ok=false;}
+const p=Number($('peso').value);
+if(!Number.isInteger(p)||p<1||p>2000){$('e-peso').textContent='Escribe un peso entre 1 y 2000 g.';ok=false;}
+return ok;
+}
+function aviso(tipo,titulo,texto,acciones=''){
+return `<div class="aviso ${tipo}" role="${tipo==='error'?'alert':'status'}"><strong>${titulo}</strong>${texto}<div class="acciones">${acciones}</div></div>`;
+}
+const volver='<button class="suave" type="button" data-accion="editar">Cambiar datos</button>';
+function espera(ms){return new Promise(r=>setTimeout(r,ms));}
+async function planificar(){
+const o=$('origen').value,d=$('destino').value,peso=Number($('peso').value),m=distancia(o,d);
+const nombres=['Verificando con Aerocivil','Calculando etapas','Asignando estaciones de carga','Asignando drones'];
+const pintarPasos=n=>$('resultado').innerHTML='<ol class="pasos">'+nombres.map((t,i)=>`<li class="${i<n?'hecho':i===n?'actual':''}"><span class="marca">${i<n?'✓':''}</span>${t}</li>`).join('')+'</ol>';
+$('planificar').disabled=true;
+if(!sedes[o].activa||!sedes[d].activa){
+const cual=!sedes[o].activa?o:d;
+$('resultado').innerHTML=aviso('error','La sede '+NOMBRES[cual]+' está inactiva.','No puede ser origen ni destino mientras esté fuera de servicio.',volver+'<button class="suave" type="button" data-activar="'+cual+'">Activar '+NOMBRES[cual]+'</button>');
+$('planificar').disabled=false;return;}
+if(sedes[o].viento>25){
+$('resultado').innerHTML=aviso('error','Condiciones climáticas adversas en '+NOMBRES[o]+'.','Viento de '+sedes[o].viento+' km/h (máximo permitido: 25 km/h). No se puede lanzar el drone.',volver);
+$('planificar').disabled=false;return;}
+pintarPasos(0);await espera(700);
+if(o==='ECI'&&d==='UNIANDES'||o==='UNIANDES'&&d==='ECI'){
+$('resultado').innerHTML=aviso('error','Aerocivil no autorizó el corredor.','Motivo: zona restringida por evento hasta las 18:00. Puede reintentar con otro horario o elegir otra sede.',volver);
+$('planificar').disabled=false;return;}
+pintarPasos(1);await espera(600);
+const tramos=Math.ceil(m/5000);
+if(peso>500&&tramos>2){
+$('resultado').innerHTML=aviso('error','El paquete supera la capacidad de la ruta.','Con '+tramos+' etapas el máximo es 500 g y el paquete pesa '+peso+' g. Reduzca el peso o divida el envío.',volver);
+$('planificar').disabled=false;return;}
+pintarPasos(2);await espera(600);
+if(tramos>=3){
+$('resultado').innerHTML=aviso('error','No hay estación de carga disponible en la parada 2.','La estación está ocupada. Se reintentará automáticamente en 15 minutos y la misión queda pendiente.',volver+'<button class="suave" type="button" data-accion="reintentar">Reintentar ahora</button>');
+$('planificar').disabled=false;return;}
+pintarPasos(3);await espera(600);
+const etapas=[];let resto=m;let desde=NOMBRES[o];
+for(let i=1;i<=tramos;i++){const t=Math.min(resto,5000);resto-=t;const hasta=resto===0?NOMBRES[d]:'Estación '+i;
+const tipo=peso>500?'CARGO':t>3000?'EXPRESS':'MINI';etapas.push({n:i,desde,hasta,t,tipo,dron:'D-'+(40+i)});desde=hasta;}
+seguimiento={etapas,hechas:0};
+$('resultado').innerHTML=aviso('ok','Ruta lista: '+NOMBRES[o]+' a '+NOMBRES[d],'Distancia total '+m+' m en '+tramos+' etapa'+(tramos>1?'s':'')+'. Autorización Aerocivil AC-'+(1000+Math.floor(Math.random()*9000))+'.<table><thead><tr><th>Etapa</th><th>Tramo</th><th>Distancia</th><th>Drone</th></tr></thead><tbody>'+etapas.map(e=>`<tr><td>${e.n}</td><td>${e.desde} a ${e.hasta}</td><td>${e.t} m</td><td class="mono">${e.dron} ${e.tipo}</td></tr>`).join('')+'</tbody></table>','<button class="accion" type="button" data-accion="confirmar">Confirmar y despegar</button>'+volver);
+$('planificar').disabled=false;
+}
+function pintarSeguimiento(){
+const s=seguimiento;
+const terminado=s.hechas===s.etapas.length;
+$('resultado').innerHTML=aviso(terminado?'ok':'info',terminado?'Misión entregada.':'Misión en vuelo.',(terminado?'Todas las etapas se completaron.':'Etapa '+(s.hechas+1)+' de '+s.etapas.length+' en curso.')+'<div class="seguimiento">'+s.etapas.map((e,i)=>`<div class="etapa ${i<s.hechas?'completa':i===s.hechas?'vuelo':''}">Etapa ${e.n}<br>${i<s.hechas?'Completada':i===s.hechas?'En vuelo':'Pendiente'}</div>`).join('')+'</div>',terminado?'<button class="accion" type="button" data-accion="nueva">Planificar otra ruta</button>':'<button class="accion" type="button" data-accion="avanzar">Simular etapa completada</button>');
+}
+document.addEventListener('click',e=>{
+const t=e.target.closest('button');if(!t)return;
+if(t.dataset.tema){document.body.dataset.sede=t.dataset.tema;document.querySelectorAll('[data-tema]').forEach(b=>b.setAttribute('aria-pressed',String(b===t)));}
+if(t.dataset.sedeToggle){sedes[t.dataset.sedeToggle].activa=!sedes[t.dataset.sedeToggle].activa;pintarRed();}
+if(t.dataset.activar){sedes[t.dataset.activar].activa=true;pintarRed();$('resultado').innerHTML=aviso('ok','Sede activada.','Ya puedes volver a planificar la ruta.');}
+const a=t.dataset.accion;
+if(a==='editar'||a==='nueva'){$('resultado').innerHTML='';$('peso').focus();}
+if(a==='reintentar'&&validar())planificar();
+if(a==='confirmar'){seguimiento.hechas=0;pintarSeguimiento();}
+if(a==='avanzar'){seguimiento.hechas++;pintarSeguimiento();}
+});
+$('form').addEventListener('submit',e=>{e.preventDefault();if(validar())planificar();});
+setInterval(()=>{const k=Object.keys(sedes)[Math.floor(Math.random()*4)];const s=sedes[k];if(s.disp>3){s.disp--;s.vuelo++;}else{s.vuelo--;s.disp++;}pintarRed();},4000);
+llenarSelects();pintarRed();
+</script>
+</body></html>

@@ -1,0 +1,90 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='1110' viewBox='0 0 1400 1110' font-family='Segoe UI, Arial, sans-serif'>
+<defs><marker id='a' markerWidth='10' markerHeight='8' refX='9' refY='4' orient='auto'><path d='M0,0 L10,4 L0,8 z' fill='#334155'/></marker><marker id='b' markerWidth='10' markerHeight='8' refX='9' refY='4' orient='auto'><path d='M1,0 L9,4 L1,8' fill='none' stroke='#7c3aed' stroke-width='1.5'/></marker><marker id='g' markerWidth='14' markerHeight='12' refX='13' refY='6' orient='auto'><path d='M1,1 L13,6 L1,11 z' fill='#fff' stroke='#1e293b' stroke-width='1.5'/></marker></defs>
+<rect width='1400' height='1110' fill='#ffffff'/>
+<text x='30' y='36' font-size='20' font-weight='700' fill='#0f172a'>SkyCampus Enterprise - Casos de uso en 5 paquetes</text>
+<text x='30' y='58' font-size='13' fill='#475569'>El Coordinador de sede puede hacer todo lo del Operador. El Superadmin puede hacer todo lo del Coordinador</text>
+<rect x='300' y='75' width='1000' height='240' rx='8' fill='#f8fafc' stroke='#1e3a8a' stroke-width='2'/>
+<text x='318' y='97' font-size='14' font-weight='700' fill='#1e3a8a'>Paquete Misiones</text>
+<rect x='300' y='330' width='1000' height='185' rx='8' fill='#f8fafc' stroke='#1e3a8a' stroke-width='2'/>
+<text x='318' y='352' font-size='14' font-weight='700' fill='#1e3a8a'>Paquete Rutas</text>
+<rect x='300' y='530' width='1000' height='165' rx='8' fill='#f8fafc' stroke='#1e3a8a' stroke-width='2'/>
+<text x='318' y='552' font-size='14' font-weight='700' fill='#1e3a8a'>Paquete Flota</text>
+<rect x='300' y='710' width='1000' height='125' rx='8' fill='#f8fafc' stroke='#1e3a8a' stroke-width='2'/>
+<text x='318' y='732' font-size='14' font-weight='700' fill='#1e3a8a'>Paquete Sedes</text>
+<rect x='300' y='850' width='1000' height='225' rx='8' fill='#f8fafc' stroke='#1e3a8a' stroke-width='2'/>
+<text x='318' y='872' font-size='14' font-weight='700' fill='#1e3a8a'>Paquete Analytics</text>
+<line x1='122' y1='165' x2='305' y2='135' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='165' x2='305' y2='385' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='335' x2='305' y2='205' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='335' x2='305' y2='275' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='335' x2='305' y2='610' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='555' x2='305' y2='455' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='555' x2='675' y2='775' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='895' x2='305' y2='775' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='895' x2='305' y2='905' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='895' x2='305' y2='970' stroke='#64748b' stroke-width='1.3'/>
+<line x1='122' y1='895' x2='305' y2='1035' stroke='#64748b' stroke-width='1.3'/>
+<line x1='1328' y1='620' x2='1125' y2='590' stroke='#64748b' stroke-width='1.3'/>
+<line x1='1328' y1='620' x2='1125' y2='656' stroke='#64748b' stroke-width='1.3'/>
+<ellipse cx='430' cy='135' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='140' text-anchor='middle' font-size='12.5' fill='#0f172a'>Solicitar envío</text>
+<ellipse cx='430' cy='205' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='210' text-anchor='middle' font-size='12.5' fill='#0f172a'>Asignar misión</text>
+<ellipse cx='430' cy='275' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='272' text-anchor='middle' font-size='12.5' fill='#0f172a'>Cancelar</text>
+<text x='430' y='288' text-anchor='middle' font-size='12.5' fill='#0f172a'>misión pendiente</text>
+<ellipse cx='800' cy='205' rx='125' ry='32' fill='#ede9fe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='800' y='202' text-anchor='middle' font-size='12.5' fill='#0f172a'>Programar para</text>
+<text x='800' y='218' text-anchor='middle' font-size='12.5' fill='#0f172a'>más tarde</text>
+<ellipse cx='430' cy='385' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='382' text-anchor='middle' font-size='12.5' fill='#0f172a'>Seguir etapas</text>
+<text x='430' y='398' text-anchor='middle' font-size='12.5' fill='#0f172a'>de la ruta</text>
+<ellipse cx='430' cy='455' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='452' text-anchor='middle' font-size='12.5' fill='#0f172a'>Planificar</text>
+<text x='430' y='468' text-anchor='middle' font-size='12.5' fill='#0f172a'>ruta inter-sede</text>
+<ellipse cx='800' cy='385' rx='125' ry='32' fill='#ede9fe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='800' y='382' text-anchor='middle' font-size='12.5' fill='#0f172a'>Consultar autorización</text>
+<text x='800' y='398' text-anchor='middle' font-size='12.5' fill='#0f172a'>de Aerocivil</text>
+<ellipse cx='800' cy='455' rx='125' ry='32' fill='#ede9fe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='800' y='452' text-anchor='middle' font-size='12.5' fill='#0f172a'>Asignar estación</text>
+<text x='800' y='468' text-anchor='middle' font-size='12.5' fill='#0f172a'>de carga</text>
+<ellipse cx='430' cy='610' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='615' text-anchor='middle' font-size='12.5' fill='#0f172a'>Ver flota de la sede</text>
+<ellipse cx='1000' cy='590' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='1000' y='595' text-anchor='middle' font-size='12.5' fill='#0f172a'>Atender fallo de drone</text>
+<ellipse cx='1000' cy='656' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='1000' y='653' text-anchor='middle' font-size='12.5' fill='#0f172a'>Marcar drone</text>
+<text x='1000' y='669' text-anchor='middle' font-size='12.5' fill='#0f172a'>como reparado</text>
+<ellipse cx='430' cy='775' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='772' text-anchor='middle' font-size='12.5' fill='#0f172a'>Activar o</text>
+<text x='430' y='788' text-anchor='middle' font-size='12.5' fill='#0f172a'>desactivar sede</text>
+<ellipse cx='800' cy='775' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='800' y='772' text-anchor='middle' font-size='12.5' fill='#0f172a'>Configurar identidad visual</text>
+<text x='800' y='788' text-anchor='middle' font-size='12.5' fill='#0f172a'>de la sede</text>
+<ellipse cx='430' cy='905' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='902' text-anchor='middle' font-size='12.5' fill='#0f172a'>Ver eficiencia</text>
+<text x='430' y='918' text-anchor='middle' font-size='12.5' fill='#0f172a'>por sede</text>
+<ellipse cx='430' cy='970' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='975' text-anchor='middle' font-size='12.5' fill='#0f172a'>Ver ranking de sedes</text>
+<ellipse cx='430' cy='1035' rx='125' ry='32' fill='#dbeafe' stroke='#1e3a8a' stroke-width='1.6'/>
+<text x='430' y='1032' text-anchor='middle' font-size='12.5' fill='#0f172a'>Ver flota de</text>
+<text x='430' y='1048' text-anchor='middle' font-size='12.5' fill='#0f172a'>toda la red</text>
+<line x1='675' y1='205' x2='557' y2='205' stroke='#7c3aed' stroke-width='1.6' stroke-dasharray='7 5' marker-end='url(#b)'/>
+<text x='616' y='188' text-anchor='middle' font-size='11.5' font-style='italic' fill='#5b21b6'>&lt;&lt;extend&gt;&gt;</text>
+<text x='616' y='228' text-anchor='middle' font-size='11' fill='#5b21b6'>[sin drones aptos]</text>
+<line x1='540' y1='232' x2='700' y2='360' stroke='#7c3aed' stroke-width='1.6' stroke-dasharray='7 5' marker-end='url(#b)'/>
+<text x='650' y='300' font-size='11.5' font-style='italic' fill='#5b21b6'>&lt;&lt;include&gt;&gt;</text>
+<line x1='555' y1='445' x2='690' y2='405' stroke='#7c3aed' stroke-width='1.6' stroke-dasharray='7 5' marker-end='url(#b)'/>
+<text x='580' y='410' font-size='11.5' font-style='italic' fill='#5b21b6'>&lt;&lt;include&gt;&gt;</text>
+<line x1='555' y1='460' x2='675' y2='455' stroke='#7c3aed' stroke-width='1.6' stroke-dasharray='7 5' marker-end='url(#b)'/>
+<text x='590' y='488' font-size='11.5' font-style='italic' fill='#5b21b6'>&lt;&lt;include&gt;&gt;</text>
+<line x1='100' y1='510' x2='100' y2='374' stroke='#1e293b' stroke-width='1.8' marker-end='url(#g)'/>
+<text x='112' y='442' font-size='11.5' font-style='italic' fill='#0f172a'>hereda de</text>
+<line x1='100' y1='858' x2='100' y2='596' stroke='#1e293b' stroke-width='1.8' marker-end='url(#g)'/>
+<text x='112' y='727' font-size='11.5' font-style='italic' fill='#0f172a'>hereda de</text>
+<circle cx='100' cy='136' r='11' fill='none' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='147' x2='100' y2='180' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='158' x2='120' y2='158' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='180' x2='84' y2='206' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='180' x2='116' y2='206' stroke='#1e293b' stroke-width='2'/><text x='100' y='226' text-anchor='middle' font-size='13' font-weight='700' fill='#0f172a'>Solicitante</text>
+<circle cx='100' cy='306' r='11' fill='none' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='317' x2='100' y2='350' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='328' x2='120' y2='328' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='350' x2='84' y2='376' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='350' x2='116' y2='376' stroke='#1e293b' stroke-width='2'/><text x='100' y='396' text-anchor='middle' font-size='13' font-weight='700' fill='#0f172a'>Operador de drones</text>
+<circle cx='100' cy='526' r='11' fill='none' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='537' x2='100' y2='570' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='548' x2='120' y2='548' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='570' x2='84' y2='596' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='570' x2='116' y2='596' stroke='#1e293b' stroke-width='2'/><text x='100' y='616' text-anchor='middle' font-size='13' font-weight='700' fill='#0f172a'>Coordinador de sede</text>
+<circle cx='100' cy='866' r='11' fill='none' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='877' x2='100' y2='910' stroke='#1e293b' stroke-width='2'/><line x1='80' y1='888' x2='120' y2='888' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='910' x2='84' y2='936' stroke='#1e293b' stroke-width='2'/><line x1='100' y1='910' x2='116' y2='936' stroke='#1e293b' stroke-width='2'/><text x='100' y='956' text-anchor='middle' font-size='13' font-weight='700' fill='#0f172a'>Superadmin</text>
+<circle cx='1350' cy='591' r='11' fill='none' stroke='#1e293b' stroke-width='2'/><line x1='1350' y1='602' x2='1350' y2='635' stroke='#1e293b' stroke-width='2'/><line x1='1330' y1='613' x2='1370' y2='613' stroke='#1e293b' stroke-width='2'/><line x1='1350' y1='635' x2='1334' y2='661' stroke='#1e293b' stroke-width='2'/><line x1='1350' y1='635' x2='1366' y2='661' stroke='#1e293b' stroke-width='2'/><text x='1350' y='681' text-anchor='middle' font-size='13' font-weight='700' fill='#0f172a'>Técnico</text>
+</svg>
