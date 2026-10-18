@@ -76,6 +76,16 @@ class ObservadoresTest {
     }
 
     @Test
+    @DisplayName("El panel no acumula más de 7 notificaciones sin confirmar")
+    void panelMaximoSiete() {
+        for (int i = 0; i < 10; i++) {
+            gestor.cambiarEstado(drone, EstadoDrone.EN_VUELO);
+        }
+
+        assertEquals(PanelOperador.MAXIMO_SIN_CONFIRMAR, panel.notificaciones().size());
+    }
+
+    @Test
     @DisplayName("El cambio de estado llega a todos los observadores en menos de 1 segundo")
     void notificacionRapida() {
         assertTimeout(

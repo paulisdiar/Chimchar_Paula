@@ -1,0 +1,78 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1300' height='820' viewBox='0 0 1300 820' font-family='Segoe UI, Arial, sans-serif'>
+<defs><marker id='a' markerWidth='10' markerHeight='8' refX='9' refY='4' orient='auto'><path d='M0,0 L10,4 L0,8 z' fill='#334155'/></marker><marker id='b' markerWidth='10' markerHeight='8' refX='9' refY='4' orient='auto'><path d='M1,0 L9,4 L1,8' fill='none' stroke='#7c3aed' stroke-width='1.5'/></marker><marker id='g' markerWidth='14' markerHeight='12' refX='13' refY='6' orient='auto'><path d='M1,1 L13,6 L1,11 z' fill='#fff' stroke='#1e293b' stroke-width='1.5'/></marker></defs>
+<rect width='1300' height='820' fill='#ffffff'/>
+<text x='30' y='36' font-size='20' font-weight='700' fill='#0f172a'>SkyCampus Enterprise - Contexto (C4 nivel 1)</text>
+<text x='30' y='58' font-size='13' fill='#475569'>Cinco actores y cinco sistemas externos. Nuevos en Enterprise: Coordinador de sede, Superadmin, Aerocivil, ERP universitario y Analytics platform</text>
+<rect x='520' y='90' width='260' height='650' rx='10' fill='#1e3a8a' stroke='#172554' stroke-width='2'/>
+<text x='650' y='400' text-anchor='middle' font-size='22' font-weight='700' fill='#fff'>SkyCampus Enterprise</text>
+<text x='650' y='428' text-anchor='middle' font-size='13' fill='#c7d2fe'>[Sistema de software]</text>
+<text x='650' y='452' text-anchor='middle' font-size='12' fill='#c7d2fe'>100 drones en 4 sedes</text>
+<rect x='40' y='110' width='215' height='80' rx='10' fill='#ede9fe' stroke='#7c3aed' stroke-width='2'/>
+<text x='147.5' y='146.0' text-anchor='middle' font-size='15' font-weight='700' fill='#2e1065'>Solicitante</text>
+<text x='147.5' y='166.0' text-anchor='middle' font-size='11.5' fill='#2e1065'>Pide el reparto</text>
+<line x1='257' y1='138' x2='518' y2='138' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='388' y='132' text-anchor='middle' font-size='12' fill='#0f172a'>Paquete, destino y prioridad</text>
+<line x1='518' y1='164' x2='257' y2='164' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='388' y='180' text-anchor='middle' font-size='12' fill='#0f172a'>Código y etapas de la misión</text>
+<rect x='40' y='245' width='215' height='80' rx='10' fill='#ede9fe' stroke='#7c3aed' stroke-width='2'/>
+<text x='147.5' y='281.0' text-anchor='middle' font-size='15' font-weight='700' fill='#2e1065'>Operador de drones</text>
+<text x='147.5' y='301.0' text-anchor='middle' font-size='11.5' fill='#2e1065'>Supervisa su sede</text>
+<line x1='257' y1='273' x2='518' y2='273' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='388' y='267' text-anchor='middle' font-size='12' fill='#0f172a'>Misiones y confirmaciones</text>
+<line x1='518' y1='299' x2='257' y2='299' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='388' y='315' text-anchor='middle' font-size='12' fill='#0f172a'>Flota y alertas de la sede</text>
+<rect x='40' y='380' width='215' height='80' rx='10' fill='#ede9fe' stroke='#7c3aed' stroke-width='2'/>
+<text x='147.5' y='416.0' text-anchor='middle' font-size='15' font-weight='700' fill='#2e1065'>Técnico de mantenimiento</text>
+<text x='147.5' y='436.0' text-anchor='middle' font-size='11.5' fill='#2e1065'>Atiende fallos</text>
+<line x1='257' y1='408' x2='518' y2='408' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='388' y='402' text-anchor='middle' font-size='12' fill='#0f172a'>Drone reparado</text>
+<line x1='518' y1='434' x2='257' y2='434' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='388' y='450' text-anchor='middle' font-size='12' fill='#0f172a'>Alerta de drone en FALLO</text>
+<rect x='40' y='515' width='215' height='80' rx='10' fill='#dcfce7' stroke='#16a34a' stroke-width='2'/>
+<text x='147.5' y='551.0' text-anchor='middle' font-size='15' font-weight='700' fill='#14532d'>Coordinador de sede</text>
+<text x='147.5' y='571.0' text-anchor='middle' font-size='11.5' fill='#14532d'>NUEVO · gestiona una sede</text>
+<line x1='257' y1='543' x2='518' y2='543' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='388' y='537' text-anchor='middle' font-size='12' fill='#0f172a'>Rutas inter-sede e identidad</text>
+<line x1='518' y1='569' x2='257' y2='569' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='388' y='585' text-anchor='middle' font-size='12' fill='#0f172a'>Estado de la sede</text>
+<rect x='40' y='650' width='215' height='80' rx='10' fill='#dcfce7' stroke='#16a34a' stroke-width='2'/>
+<text x='147.5' y='686.0' text-anchor='middle' font-size='15' font-weight='700' fill='#14532d'>Superadmin</text>
+<text x='147.5' y='706.0' text-anchor='middle' font-size='11.5' fill='#14532d'>NUEVO · gestiona la red</text>
+<line x1='257' y1='678' x2='518' y2='678' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='388' y='672' text-anchor='middle' font-size='12' fill='#0f172a'>Alta y baja de sedes</text>
+<line x1='518' y1='704' x2='257' y2='704' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='388' y='720' text-anchor='middle' font-size='12' fill='#0f172a'>Analytics y flota de la red</text>
+<rect x='1045' y='110' width='215' height='80' rx='10' fill='#f1f5f9' stroke='#64748b' stroke-width='2'/>
+<text x='1152.5' y='146.0' text-anchor='middle' font-size='15' font-weight='700' fill='#0f172a'>API Meteorológica</text>
+<text x='1152.5' y='166.0' text-anchor='middle' font-size='11.5' fill='#0f172a'>Clima por sede</text>
+<line x1='782' y1='138' x2='1043' y2='138' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='913' y='132' text-anchor='middle' font-size='12' fill='#0f172a'>Consulta de clima</text>
+<line x1='1043' y1='164' x2='782' y2='164' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='913' y='180' text-anchor='middle' font-size='12' fill='#0f172a'>Viento y lluvia</text>
+<rect x='1045' y='245' width='215' height='80' rx='10' fill='#dcfce7' stroke='#16a34a' stroke-width='2'/>
+<text x='1152.5' y='281.0' text-anchor='middle' font-size='15' font-weight='700' fill='#14532d'>Aerocivil</text>
+<text x='1152.5' y='301.0' text-anchor='middle' font-size='11.5' fill='#14532d'>NUEVO · autoriza vuelos</text>
+<line x1='782' y1='273' x2='1043' y2='273' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='913' y='267' text-anchor='middle' font-size='12' fill='#0f172a'>Solicitud de ruta</text>
+<line x1='1043' y1='299' x2='782' y2='299' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='913' y='315' text-anchor='middle' font-size='12' fill='#0f172a'>Autorización o rechazo</text>
+<rect x='1045' y='380' width='215' height='80' rx='10' fill='#f1f5f9' stroke='#64748b' stroke-width='2'/>
+<text x='1152.5' y='416.0' text-anchor='middle' font-size='15' font-weight='700' fill='#0f172a'>Sistema de Alertas</text>
+<text x='1152.5' y='436.0' text-anchor='middle' font-size='11.5' fill='#0f172a'>Notifica a técnicos</text>
+<line x1='782' y1='408' x2='1043' y2='408' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='913' y='402' text-anchor='middle' font-size='12' fill='#0f172a'>Drone en FALLO</text>
+<rect x='1045' y='515' width='215' height='80' rx='10' fill='#dcfce7' stroke='#16a34a' stroke-width='2'/>
+<text x='1152.5' y='551.0' text-anchor='middle' font-size='15' font-weight='700' fill='#14532d'>ERP universitario</text>
+<text x='1152.5' y='571.0' text-anchor='middle' font-size='11.5' fill='#14532d'>NUEVO · centros de costo</text>
+<line x1='782' y1='543' x2='1043' y2='543' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='913' y='537' text-anchor='middle' font-size='12' fill='#0f172a'>Costo por misión</text>
+<line x1='1043' y1='569' x2='782' y2='569' stroke='#334155' stroke-width='1.6' stroke-dasharray='6 4' marker-end='url(#a)'/>
+<text x='913' y='585' text-anchor='middle' font-size='12' fill='#0f172a'>Centros de costo</text>
+<rect x='1045' y='650' width='215' height='80' rx='10' fill='#dcfce7' stroke='#16a34a' stroke-width='2'/>
+<text x='1152.5' y='686.0' text-anchor='middle' font-size='15' font-weight='700' fill='#14532d'>Analytics platform</text>
+<text x='1152.5' y='706.0' text-anchor='middle' font-size='11.5' fill='#14532d'>NUEVO · tableros</text>
+<line x1='782' y1='678' x2='1043' y2='678' stroke='#334155' stroke-width='1.6' marker-end='url(#a)'/>
+<text x='913' y='672' text-anchor='middle' font-size='12' fill='#0f172a'>Métricas por sede</text>
+<rect x='40' y='770' width='1220' height='30' rx='6' fill='#f1f5f9' stroke='#cbd5e1'/>
+<text x='52' y='790' font-size='12.5' fill='#334155'>Línea continua: datos hacia el destino de la flecha. Línea punteada: respuesta. Verde: nuevo en Enterprise. Violeta y gris: ya existían.</text>
+</svg>
