@@ -33,6 +33,9 @@ public class PlanificadorRuta {
     }
 
     public Ruta dividir(String origen, String destino, int distanciaMetros) {
+        if (distanciaMetros <= 0) {
+            throw new IllegalArgumentException("La distancia debe ser mayor que 0");
+        }
         RutaCompuesta ruta = new RutaCompuesta();
         int restante = distanciaMetros;
         int numero = 1;
